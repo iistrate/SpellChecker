@@ -5,8 +5,15 @@
 
 class HashTable {
 private:
+	const int m_size;
+	struct Node {
+		int m_key;
+		string m_value;
+		Node* m_next;
+	};
 public:
-	HashTable() {}
+	HashTable() : m_size(100) {}
+	int hash(string value);
 };
 
 
