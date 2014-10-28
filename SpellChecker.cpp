@@ -6,6 +6,14 @@ void SpellChecker::run(void) {
 	//test hash function
 	//	m_Debugger.pTest("Index is " + std::to_string(hash("aardwolves")));
 	//end
+	//test hashtable sizes
+	//for (int i = 0; i < m_maxSize; i++) {
+	//	cout << m_HT[i].getCount() << endl;
+	//}
+	//end
+	while (m_running) {
+
+	}
 }
 void SpellChecker::setup(void) {
 	std::ifstream in("dict.txt");
@@ -17,16 +25,13 @@ void SpellChecker::setup(void) {
 		index = hash(word);
 		//get is used
 		used = m_HT[index].isFull();
-		//if the hash table is not used
+		//if index of ht is not used
 		if (!used) {
-			//insert word
-			m_HT[index].insertWord(word);
 			//raise used flag
 			m_HT[index].setFull(true);
 		}
-		else {
-			//insert word as a node
-		}
+		//insert word
+		m_HT[index].insertWord(word);
 
 //test word
 //		m_Debugger.pTest("Word is " + word);

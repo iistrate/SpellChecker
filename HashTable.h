@@ -11,8 +11,7 @@ private:
 		Node* m_next;
 	public:
 		Node() : m_value(0), m_next(0) {}
-		Node(int key) : m_value(0), m_next(0) {}
-		Node(int key, string value) :m_value(value), m_next(0) {}
+		Node(string value) :m_value(value), m_next(0) {}
 
 		void setNext(Node* next) {
 			m_next = next;
@@ -31,9 +30,15 @@ private:
 	string m_value;
 	Node* m_head;
 	bool m_full;
+	int m_count;
 public:
-	HashTable() : m_head(0) {}
+	HashTable() : m_head(0), m_full(false), m_count(0) {}
 	void insertWord(string word);
+
+
+	int getCount(void) {
+		return m_count;
+	}
 
 	bool isFull(void) {
 		return m_full;

@@ -13,9 +13,16 @@ class SpellChecker {
 private:
 	Debug m_Debugger;
 	HashTable m_HT[25];
+
 	int m_maxSize;
+	bool m_running;
 public:
-	SpellChecker() : m_maxSize(25) {}
+	SpellChecker() : m_maxSize(25), m_running(true) {
+		//init array
+		for (int i = 0; i < m_maxSize; i++) {
+			m_HT[i] = HashTable();
+		}
+	}
 	void run(void);
 	void setup(void);
 	
