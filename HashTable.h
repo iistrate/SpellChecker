@@ -5,22 +5,17 @@
 
 class HashTable {
 private:
-	const int m_size;
 	class Node {
 	private:
-		int m_key;
 		string m_value;
 		Node* m_next;
 	public:
-		Node() : m_key(0), m_value(0), m_next(0) {}
-		Node(int key) : m_key(key), m_value(0), m_next(0) {}
-		Node(int key, string value) : m_key(key), m_value(value), m_next(0) {}
+		Node() : m_value(0), m_next(0) {}
+		Node(int key) : m_value(0), m_next(0) {}
+		Node(int key, string value) :m_value(value), m_next(0) {}
 
 		void setNext(Node* next) {
 			m_next = next;
-		}
-		void setIndex(int key) {
-			m_key = key;
 		}
 		void setValue(string value) {
 			m_value = value;
@@ -29,16 +24,24 @@ private:
 		Node* getNext(void) {
 			return m_next;
 		}
-		int getIndex(void) {
-			return m_key;
-		}
 		string getValue(void) {
 			return m_value;
 		}
 	};
+	string m_value;
+	Node* m_head;
+	bool m_full;
 public:
-	HashTable() : m_size(25) {}
-	int hash(string value);
+	HashTable() : m_head(0) {}
+	void insertWord(string word);
+
+	bool isFull(void) {
+		return m_full;
+	}
+	void setFull(bool b) {
+		m_full = b;
+	}
+
 };
 
 
