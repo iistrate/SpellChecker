@@ -20,7 +20,7 @@ void SpellChecker::run(void) {
 		cin >> uInput;
 		//get where to look
 		lookIn = hash((uInput));
-		if (m_HT[lookIn].findWord("uInput")) {
+		if (m_HT[lookIn].findWord(uInput)) {
 			cout << "Found word!" << endl;
 		}
 		//suggestions
@@ -29,7 +29,7 @@ void SpellChecker::run(void) {
 			//get suggestions
 			vector < string > suggestions = m_HT[lookIn].getSuggestions();
 			for (int i = 0; i < suggestions.size(); i++) {
-				cout << suggestions[i];
+				cout << suggestions[i] << " ";
 			}
 			cout << endl;
 		}

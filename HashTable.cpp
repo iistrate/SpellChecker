@@ -27,10 +27,12 @@ bool HashTable::findWord(string word) {
 	string dictWord;
 	while (navigator != 0) {
 		dictWord = navigator->getValue();
-		if (navigator->getValue() == word) {
+		if (dictWord == word) {
 			return true;
 		}
-		
+		if (dictWord[0] == word[0]) {
+			m_suggestions.push_back(dictWord);
+		}
 		navigator = navigator->getNext();
 	}
 	return false;
