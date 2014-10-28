@@ -2,6 +2,8 @@
 #define HASH_TABLE_H
 
 #include "Debug.h"
+#include <vector>
+using std::vector;
 
 class HashTable {
 private:
@@ -31,10 +33,12 @@ private:
 	Node* m_head;
 	bool m_full;
 	int m_count;
+	vector < string > m_suggestions;
 public:
 	HashTable() : m_head(0), m_full(false), m_count(0) {}
 	void insertWord(string word);
 
+	bool findWord(string word);
 
 	int getCount(void) {
 		return m_count;
@@ -46,7 +50,11 @@ public:
 	void setFull(bool b) {
 		m_full = b;
 	}
+	void print(void);
 
+	vector < string > getSuggestions(void) {
+		return m_suggestions;
+	}
 };
 
 

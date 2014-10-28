@@ -10,9 +10,29 @@ void SpellChecker::run(void) {
 	//for (int i = 0; i < m_maxSize; i++) {
 	//	cout << m_HT[i].getCount() << endl;
 	//}
+	//system("pause");
 	//end
+	string uInput;
+	using std::cin;
+	int lookIn = 0;
 	while (m_running) {
-
+		cout << "Please enter word: ";
+		cin >> uInput;
+		//get where to look
+		lookIn = hash((uInput));
+		if (m_HT[lookIn].findWord("uInput")) {
+			cout << "Found word!" << endl;
+		}
+		//suggestions
+		else {
+			cout << "Did you mean: ";
+			//get suggestions
+			vector < string > suggestions = m_HT[lookIn].getSuggestions();
+			for (int i = 0; i < suggestions.size(); i++) {
+				cout << suggestions[i];
+			}
+			cout << endl;
+		}
 	}
 }
 void SpellChecker::setup(void) {

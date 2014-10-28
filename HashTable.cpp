@@ -11,14 +11,34 @@ void HashTable::insertWord(string word) {
 		else {
 			Node* navigator = m_head;
 			//go to end
-			while (navigator != 0) {
-				navigator = m_head->getNext();
+			while (navigator->getNext() != 0) {
+				navigator = navigator->getNext();
 			}
-			navigator = newNode;
+			navigator->setNext(newNode);
 		}
 		m_count++;
 	}
 	else {
 		m_value = word;
+	}
+}
+bool HashTable::findWord(string word) {
+	Node* navigator = m_head;
+	string dictWord;
+	while (navigator != 0) {
+		dictWord = navigator->getValue();
+		if (navigator->getValue() == word) {
+			return true;
+		}
+		
+		navigator = navigator->getNext();
+	}
+	return false;
+}
+void HashTable::print(void) {
+	Node* navigator = m_head;
+	while (navigator != 0) {
+		cout << navigator->getValue() << endl;
+		navigator = navigator->getNext();
 	}
 }

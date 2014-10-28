@@ -12,12 +12,12 @@ using std::vector;
 class SpellChecker {
 private:
 	Debug m_Debugger;
-	HashTable m_HT[25];
+	HashTable m_HT[250];
 
 	int m_maxSize;
 	bool m_running;
 public:
-	SpellChecker() : m_maxSize(25), m_running(true) {
+	SpellChecker() : m_maxSize(250), m_running(true) {
 		//init array
 		for (int i = 0; i < m_maxSize; i++) {
 			m_HT[i] = HashTable();
