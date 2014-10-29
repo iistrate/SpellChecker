@@ -30,8 +30,17 @@ bool HashTable::findWord(string word) {
 		if (dictWord == word) {
 			return true;
 		}
-		if (dictWord[0] == word[0]) {
-			m_suggestions.push_back(dictWord);
+		if (dictWord.length() <= word.length() + 2 && dictWord.length() >= word.length() - 2) {
+			int count = 0;
+			//check for misplaced letter
+			for (int i = 0; i < dictWord.length() && i < word.length(); i++) {
+				if (dictWord[i] == word[i]) {
+					count++;
+				}
+			}
+			if (count >= (word.length() - 1)) {
+				m_suggestions.push_back(dictWord);
+			}
 		}
 		navigator = navigator->getNext();
 	}

@@ -23,11 +23,29 @@ void SpellChecker::run(void) {
 		if (m_HT[lookIn].findWord(uInput)) {
 			cout << "Found word!" << endl;
 		}
-		//suggestions
+		//suggestions ;;look in the prev 25 and next 25
 		else {
-			cout << "Did you mean: ";
-			//get suggestions
 			vector < string > suggestions = m_HT[lookIn].getSuggestions();
+			int errorMargin = 0;
+			//upperbound
+			while (lookIn + errorMargin <= m_maxSize && errorMargin < 26) {
+				m_HT[lookIn + errorMargin].findWord(uInput);
+				vector < string > temp = m_HT[lookIn + errorMargin].getSuggestions();
+				for (int i = 0; i < temp.size(); i++) {
+					suggestions.push_back(temp[i]);
+				}
+				errorMargin++;
+			}
+			//lowerbound
+			while (lookIn - errorMargin >= 0 && errorMargin < 26) {
+				m_HT[lookIn - errorMargin].findWord(uInput);
+				vector < string > temp = m_HT[lookIn - errorMargin].getSuggestions();
+				for (int i = 0; i < temp.size(); i++) {
+					suggestions.push_back(temp[i]);
+				}
+				errorMargin++;
+			}
+			cout << "Word not found. Did you mean: ";
 			for (int i = 0; i < suggestions.size(); i++) {
 				cout << suggestions[i] << " ";
 			}
