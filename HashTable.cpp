@@ -8,14 +8,15 @@ void HashTable::insertWord(string word) {
 		if (m_count == 0) {
 			m_head = newNode;
 		}
-		else {
-			Node* navigator = m_head;
-			//go to end
-			while (navigator->getNext() != 0) {
-				navigator = navigator->getNext();
-			}
-			navigator->setNext(newNode);
+		else if (m_count == 1) {
+			m_tail = newNode;
+			m_head->setNext(m_tail);
 		}
+		else {
+			Node* temp = m_tail;
+			m_tail = newNode;
+			temp->setNext(m_tail);
+	}
 		m_count++;
 	}
 	else {
@@ -40,9 +41,9 @@ bool HashTable::findWord(string word) {
 				}
 			}
 			if (count >= (word.length() - 1)) {
-				//if (m_suggestions.size() < 10) {
+				if (m_suggestions.size() < 10) {
 					m_suggestions.push_back(dictWord);
-				//}
+				}
 			}
 		}
 		navigator = navigator->getNext();

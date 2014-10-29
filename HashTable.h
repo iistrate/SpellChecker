@@ -31,6 +31,7 @@ private:
 	};
 	string m_value;
 	Node* m_head;
+	Node* m_tail;
 	bool m_full;
 	int m_count;
 	vector < string > m_suggestions;
