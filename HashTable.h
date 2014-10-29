@@ -30,12 +30,13 @@ private:
 		}
 	};
 	string m_value;
-	Node* m_head;
+	Node* m_head; 
+	Node* m_tail;
 	bool m_full;
 	int m_count;
 	vector < string > m_suggestions;
 public:
-	HashTable() : m_head(0), m_full(false), m_count(0) {}
+	HashTable() : m_head(0), m_tail(0), m_full(false), m_count(0) {}
 	void insertWord(string word);
 
 	bool findWord(string word);
@@ -55,7 +56,7 @@ public:
 	vector < string > getSuggestions(void) {
 		vector < string > returned = m_suggestions;
 		m_suggestions.clear();
-		return returned;
+		return m_suggestions;
 	}
 };
 

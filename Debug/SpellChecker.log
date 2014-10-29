@@ -1,16 +1,15 @@
-﻿Build started 10/29/2014 11:26:08 AM.
+﻿Build started 10/29/2014 12:33:54 PM.
      1>Project "C:\Users\Ioan\documents\visual studio 2013\Projects\SpellChecker\SpellChecker\SpellChecker.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt HashTable.cpp Main.cpp SpellChecker.cpp
-         SpellChecker.cpp
-     1>c:\users\ioan\documents\visual studio 2013\projects\spellchecker\spellchecker\spellchecker.cpp(49): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\ioan\documents\visual studio 2013\projects\spellchecker\spellchecker\spellchecker.cpp(83): warning C4018: '<' : signed/unsigned mismatch
-         HashTable.cpp
-     1>c:\users\ioan\documents\visual studio 2013\projects\spellchecker\spellchecker\hashtable.cpp(37): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\ioan\documents\visual studio 2013\projects\spellchecker\spellchecker\hashtable.cpp(42): warning C4018: '>=' : signed/unsigned mismatch
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp SpellChecker.cpp
+         Main.cpp
          Generating Code...
          Compiling...
-         Main.cpp
+         SpellChecker.cpp
+     1>c:\users\ioan\documents\visual studio 2013\projects\spellchecker\spellchecker\spellchecker.cpp(34): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\ioan\documents\visual studio 2013\projects\spellchecker\spellchecker\spellchecker.cpp(43): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\ioan\documents\visual studio 2013\projects\spellchecker\spellchecker\spellchecker.cpp(49): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\ioan\documents\visual studio 2013\projects\spellchecker\spellchecker\spellchecker.cpp(83): warning C4018: '<' : signed/unsigned mismatch
          Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ioan\documents\visual studio 2013\Projects\SpellChecker\Debug\SpellChecker.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ioan\documents\visual studio 2013\Projects\SpellChecker\Debug\SpellChecker.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ioan\documents\visual studio 2013\Projects\SpellChecker\Debug\SpellChecker.lib" /MACHINE:X86 Debug\HashTable.obj
@@ -21,4 +20,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.57
+Time Elapsed 00:00:01.16
