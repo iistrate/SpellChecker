@@ -30,7 +30,8 @@ bool HashTable::findWord(string word) {
 		if (dictWord == word) {
 			return true;
 		}
-		if (dictWord.length() <= word.length() + 2 && dictWord.length() >= word.length() - 2) {
+		//check for omissions
+		if (dictWord.length() <= word.length() + 1 || dictWord.length() <= word.length() - 1) {
 			int count = 0;
 			//check for misplaced letter
 			for (int i = 0; i < dictWord.length() && i < word.length(); i++) {
@@ -39,7 +40,9 @@ bool HashTable::findWord(string word) {
 				}
 			}
 			if (count >= (word.length() - 1)) {
-				m_suggestions.push_back(dictWord);
+				//if (m_suggestions.size() < 10) {
+					m_suggestions.push_back(dictWord);
+				//}
 			}
 		}
 		navigator = navigator->getNext();

@@ -53,7 +53,9 @@ public:
 	void print(void);
 
 	vector < string > getSuggestions(void) {
-		return m_suggestions;
+		vector < string > returned = m_suggestions;
+		m_suggestions.clear();
+		return returned;
 	}
 };
 

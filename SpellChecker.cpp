@@ -28,7 +28,7 @@ void SpellChecker::run(void) {
 			vector < string > suggestions = m_HT[lookIn].getSuggestions();
 			int errorMargin = 0;
 			//upperbound
-			while (lookIn + errorMargin <= m_maxSize && errorMargin < 26) {
+			while (lookIn + errorMargin <= m_maxSize && errorMargin <= 26) {
 				m_HT[lookIn + errorMargin].findWord(uInput);
 				vector < string > temp = m_HT[lookIn + errorMargin].getSuggestions();
 				for (int i = 0; i < temp.size(); i++) {
@@ -37,7 +37,7 @@ void SpellChecker::run(void) {
 				errorMargin++;
 			}
 			//lowerbound
-			while (lookIn - errorMargin >= 0 && errorMargin < 26) {
+			while (lookIn - errorMargin >= 0 && errorMargin <= 26) {
 				m_HT[lookIn - errorMargin].findWord(uInput);
 				vector < string > temp = m_HT[lookIn - errorMargin].getSuggestions();
 				for (int i = 0; i < temp.size(); i++) {
