@@ -1,4 +1,4 @@
-SpellChecker
+SpellChecker C++ 
 ============
-
-Spell Checker C++, Data Structures
+Spell Checker with suggestions
+Hash tables and linked lists
